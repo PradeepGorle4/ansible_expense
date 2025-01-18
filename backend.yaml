@@ -38,6 +38,6 @@
       path: /app
 
   - name: Copy backend service
-    anisble.builtin.copy:
+    ansible.builtin.copy:
       src: /home/ec2-user/ansible_expense/backend.service
       dest: /etc/systemd/system/backend.service
