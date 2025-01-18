@@ -45,6 +45,11 @@
       src: /home/ec2-user/ansible_expense/backend.service
       dest: /etc/systemd/system/backend.service
 
+  - name: install python Libraries
+    ansible.builtin.pip:
+      name: PyMySQL
+      state: installed
+
   - name: import mysql data
     community.mysql.mysql_db:
       state: import
