@@ -31,4 +31,8 @@
     ansible.builtin.unarchive:
       src: /tmp/backend.zip
       dest: /app
-      remote_src: yes # This Ansible module thinks by default the /tmp/backend.zip is in controller m/c. so we tell that it is in local
+      remote_src: yes # This Ansible module thinks by default the /tmp/backend.zip is in controller m/c. so we tell that it is in local.
+  
+  - name: installing NojeJs dependencies
+    community.general.npm:
+      path: /app
