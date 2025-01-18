@@ -48,6 +48,7 @@
   - name: install python Libraries
     ansible.builtin.pip:
       name: PyMySQL
+      executable: pip3.9
       state: installed
 
   - name: import mysql data
