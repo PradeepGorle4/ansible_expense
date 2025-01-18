@@ -13,10 +13,10 @@
       state: started
       enabled: yes
 
-  - name: Install the dependencies
-    ansible.builtin.package:
+  - name: Install MYSQL Libraries
+    ansible.builtin.pip:
       name: PyMySQL
-      state: installed
+      executable: 3.9
 
   - name: connect to mysql server
     community.mysql.mysql_info:
