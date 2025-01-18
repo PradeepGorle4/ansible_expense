@@ -44,3 +44,12 @@
     ansible.builtin.copy:
       src: /home/ec2-user/ansible_expense/backend.service
       dest: /etc/systemd/system/backend.service
+
+  - name: import mysql data
+    ansible.mysql.mysql_db:
+      state: import
+      name: all
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: mysql.pradeepdevops.online
+      target: /app/schema/backend.sql
