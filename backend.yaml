@@ -12,3 +12,12 @@
     ansible.builtin.package:
       name: nodejs
       state: present
+  
+  - name: add expense user
+    ansible.builtin.user:
+      user: expense
+  
+  - name: creating app directory
+    ansible.builtin.file:
+      path: /app
+      state: directory
