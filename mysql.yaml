@@ -12,7 +12,12 @@
       name: mysqld
       state: started
       enabled: yes
-  
+
+  - name: Install the dependencies
+    ansible.builtin.package:
+      name: PyMySQL
+      state: installed
+
   - name: connect to mysql server
     community.mysql.mysql_info:
       login_user: root
